@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class TicTacToe {
 
     private static char[][] field;
-    private static int fieldSizeX;
-    private static int fieldSizeY;
+    private static final int fieldSizeX = 5;
+    private static final int fieldSizeY = 5;
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final Random RANDOM = new Random();
     private static final char DOT_HUMAN = 'X';
@@ -15,8 +15,6 @@ public class TicTacToe {
     private static final char DOT_EMPTY = '•';
 
     private static void initField() {
-        fieldSizeX = 5;
-        fieldSizeY = 5;
         field = new char[fieldSizeY][fieldSizeX];
         for (int i = 0; i < fieldSizeY; i++) {
             for (int j = 0; j < fieldSizeX; j++) {
@@ -64,7 +62,6 @@ public class TicTacToe {
         } while (!isEmptyCell(x, y));
         field[y][x] = DOT_AI;
     }
-
 
 
     private static boolean checkWinNew(char c) {
